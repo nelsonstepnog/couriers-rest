@@ -1,0 +1,20 @@
+class_name: ApiTester
+namespace: Delivery\CouriersRest\tests
+modules:
+  enabled:
+  - \Delivery\UserRest\tests\Helper\UserDatabaseHelper
+  - \Delivery\CouriersRest\tests\Helper\Api
+  - \Delivery\CouriersRest\tests\Helper\FuelDatabaseHelper
+  - \Delivery\CouriersRest\tests\Helper\VehicleTypeDatabaseHelper
+  - \Delivery\CouriersRest\tests\Helper\VehicleDatabaseHelper
+  - \Delivery\CouriersRest\tests\Helper\CourierDatabaseHelper
+  - \Delivery\Geoobjects\tests\Helper\LocationDatabaseHelper
+  - PhpBrowser:
+      url: http://web
+  - REST:
+      depends: PhpBrowser
+      url: http://web
+  - Db
+  - Sequence:
+      prefix: '{id}'
+  - Asserts
